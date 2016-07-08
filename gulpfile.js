@@ -45,6 +45,7 @@ gulp.task('build', function() {
   });
 
   bundler.plugin('browserify-header');
+
   bundler.plugin('minifyify', {
     map: './build/sw-toolbox.map.json',
     output: './build/sw-toolbox.map.json'
@@ -53,7 +54,8 @@ gulp.task('build', function() {
   return bundler
     .bundle()
     .pipe(source('sw-toolbox.js'))
-    .pipe(gulp.dest('./build/'));
+/*    .pipe(gulp.dest('./build/')); */
+    .pipe(gulp.dest('../helpchat-feed-java/src/main/webapp/webforms/lib/'));
 });
 
 gulp.task('lint', function() {
